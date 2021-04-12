@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "WIN_env",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:\\Keil\\ARM\\PACK\\ARM\\CMSIS\\5.0.1\\CMSIS\\Include",
+                "D:\\Keil\\ARM\\PACK\\Keil\\STM32F1xx_DFP\\2.3.0\\Device\\Include",
+                "D:\\Keil\\ARM\\PACK\\Keil\\STM32F1xx_DFP\\2.3.0\\Device\\StdPeriph_Driver\\inc",
+                "D:\\Keil/ARM/PACK/ARM/CMSIS/5.0.1/CMSIS/RTOS2/Include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "STM32F10X_HD"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
