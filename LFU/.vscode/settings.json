@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.vert": "glsl",
+        "locale": "c",
+        "string": "c",
+        "cstdarg": "cpp",
+        "cstdio": "cpp",
+        "cstdint": "cpp",
+        "cstring": "cpp"
+    }
+}
