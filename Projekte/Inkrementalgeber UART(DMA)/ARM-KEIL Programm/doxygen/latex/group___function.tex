@@ -1,0 +1,53 @@
+\hypertarget{group___function}{}\doxysection{Interrupt Service Routine}
+\label{group___function}\index{Interrupt Service Routine@{Interrupt Service Routine}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___function_ga567f7b7c3181d1019673e4d61acf1b72}{usart\+\_\+process\+\_\+data}} (const void $\ast$data, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Process received data over UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___function_gae7fa87d4bb4e6d4315a6fd478ce6cbe7}{usart\+\_\+send\+\_\+string}} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Send string to USART. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___function_gae66f6b31b5ad750f1fe042a706a4e3d4}\label{group___function_gae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int \mbox{\hyperlink{group___function_gae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main Programm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___function_ga567f7b7c3181d1019673e4d61acf1b72}\label{group___function_ga567f7b7c3181d1019673e4d61acf1b72}} 
+\index{Interrupt Service Routine@{Interrupt Service Routine}!usart\_process\_data@{usart\_process\_data}}
+\index{usart\_process\_data@{usart\_process\_data}!Interrupt Service Routine@{Interrupt Service Routine}}
+\doxysubsubsection{\texorpdfstring{usart\_process\_data()}{usart\_process\_data()}}
+{\footnotesize\ttfamily void usart\+\_\+process\+\_\+data (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Process received data over UART. 
+
+\begin{DoxyNote}{Note}
+Either process them directly or copy to other bigger buffer 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & Data to process \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & Length in units of bytes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___function_gae7fa87d4bb4e6d4315a6fd478ce6cbe7}\label{group___function_gae7fa87d4bb4e6d4315a6fd478ce6cbe7}} 
+\index{Interrupt Service Routine@{Interrupt Service Routine}!usart\_send\_string@{usart\_send\_string}}
+\index{usart\_send\_string@{usart\_send\_string}!Interrupt Service Routine@{Interrupt Service Routine}}
+\doxysubsubsection{\texorpdfstring{usart\_send\_string()}{usart\_send\_string()}}
+{\footnotesize\ttfamily void usart\+\_\+send\+\_\+string (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Send string to USART. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & String to send \\
+\hline
+\end{DoxyParams}

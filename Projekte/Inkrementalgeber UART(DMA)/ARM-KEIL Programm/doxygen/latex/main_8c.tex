@@ -1,0 +1,95 @@
+\hypertarget{main_8c}{}\doxysection{main.\+c File Reference}
+\label{main_8c}\index{main.c@{main.c}}
+
+
+DIC\#3 Project -\/ Standard Peripheral Library.  
+
+
+{\ttfamily \#include \char`\"{}stm32f10x.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32f10x\+\_\+conf.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries MAX\+\_\+\+VOLUME}~20
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a9f0a091727452df71a1760d1133bf9b4}{EXTI9\+\_\+5\+\_\+\+IRQHandler}} ()
+\begin{DoxyCompactList}\small\item\em External Interrupt Service Routine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___function_ga567f7b7c3181d1019673e4d61acf1b72}{usart\+\_\+process\+\_\+data}} (const void $\ast$data, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Process received data over UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___function_gae7fa87d4bb4e6d4315a6fd478ce6cbe7}{usart\+\_\+send\+\_\+string}} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Send string to USART. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___function_gae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main Programm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char {\bfseries uart\+DR} = 0
+\item 
+int {\bfseries volume} = 10
+\item 
+int {\bfseries old\+Volume} = 0
+\item 
+GPIO\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{group___variables_gaa2da20b97eb2e7bbc37d3175fa0ef8bc}{i\+E\+\_\+\+Event}}
+\begin{DoxyCompactList}\small\item\em Incremental Encoder -\/ GPIO Port\+: Event. \end{DoxyCompactList}\item 
+GPIO\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{group___variables_ga719870830815c73fe9d43fdf590d6470}{i\+E\+\_\+\+Direction}}
+\begin{DoxyCompactList}\small\item\em Incremental Encoder -\/ GPIO Port\+: Dircetion. \end{DoxyCompactList}\item 
+EXTI\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{group___variables_ga9b8dbf50cc68edeeef2a420518f67009}{i\+E\+\_\+\+EXTI\+\_\+\+Event}}
+\begin{DoxyCompactList}\small\item\em Incremental Encoder -\/ External Interrupt. \end{DoxyCompactList}\item 
+NVIC\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{group___variables_gaa56504c3623d28b87ab394ba5192fb56}{i\+E\+\_\+\+NVIC}}
+\begin{DoxyCompactList}\small\item\em Incremental Encoder -\/ NVIC for External Interrupt. \end{DoxyCompactList}\item 
+GPIO\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{group___variables_gae66a919c151041e5a9d609c1369ddc4b}{v\+COM\+\_\+\+Tx}}
+\begin{DoxyCompactList}\small\item\em v\+COM -\/ GPIO Port\+: Tx \end{DoxyCompactList}\item 
+GPIO\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{group___variables_ga6ecb2cb7dfb61eeba15f52c4ae85519d}{v\+COM\+\_\+\+Rx}}
+\begin{DoxyCompactList}\small\item\em v\+COM -\/ GPIO Port\+: Rx \end{DoxyCompactList}\item 
+USART\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{group___variables_ga7cc557f58aaef277697adac1588b8554}{v\+COM}}
+\begin{DoxyCompactList}\small\item\em v\+COM -\/ Init Struct \end{DoxyCompactList}\item 
+USART\+\_\+\+Clock\+Init\+Type\+Def \mbox{\hyperlink{group___variables_ga2154e0952c9b9031bb57635452c0992e}{v\+COM\+\_\+clk}}
+\begin{DoxyCompactList}\small\item\em v\+COM -\/ Clk Init Struct \end{DoxyCompactList}\item 
+NVIC\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{group___variables_gaac7f33abceaf6f7796be701c08bd1a73}{v\+COM\+\_\+\+NVIC}}
+\begin{DoxyCompactList}\small\item\em v\+COM -\/ NIVC for USART \end{DoxyCompactList}\item 
+NVIC\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{group___variables_ga64b18e6a60b46cdf96a49c1975d25be2}{v\+COM\+\_\+\+DMA\+\_\+\+NVIC}}
+\begin{DoxyCompactList}\small\item\em v\+COM -\/ NVIC for DMA \end{DoxyCompactList}\item 
+DMA\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{group___variables_ga92e12d9b53333941ecec8d68934da582}{v\+COM\+\_\+\+DMA}}
+\begin{DoxyCompactList}\small\item\em v\+COM -\/ DMA for USART \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+DIC\#3 Project -\/ Standard Peripheral Library. 
+
+\begin{DoxyDate}{Date}
+10.\+04.\+2021 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+2 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Clemens Marx 
+
+Jakob Pachtrog 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+HTL -\/ Hollabrunn
+\end{DoxyCopyright}
+Inkrementalgeber\+: GPIO C8 Event GPIO C9 Direction
+
+UART\+: GPIO A9 Tx GPIO A10 Rx 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a9f0a091727452df71a1760d1133bf9b4}\label{main_8c_a9f0a091727452df71a1760d1133bf9b4}} 
+\index{main.c@{main.c}!EXTI9\_5\_IRQHandler@{EXTI9\_5\_IRQHandler}}
+\index{EXTI9\_5\_IRQHandler@{EXTI9\_5\_IRQHandler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{EXTI9\_5\_IRQHandler()}{EXTI9\_5\_IRQHandler()}}
+{\footnotesize\ttfamily void EXTI9\+\_\+5\+\_\+\+IRQHandler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+External Interrupt Service Routine. 
+
+\begin{DoxyNote}{Note}
+If Event-\/\+Port (PC8) has a falling flank, this interrupt is triggered. The Direction of the Incremental Encoder (IE) depands on the state of Direction-\/\+Port (PC9). 
+\end{DoxyNote}
