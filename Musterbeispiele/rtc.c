@@ -1,16 +1,23 @@
 #include "includes.h"
 
 __IO uint32_t TimeDisplay = 0;
+USART_InitTypeDef usart;
+
+uint32_t Time_Regulate(void);
+void Time_Adjust(void);
+uint8_t USART_Scanf(uint32_t value);
+void Time_Show(void);
+void Time_Display(uint32_t TimeVar);
 
 void RTC_IRQHandler(void)
 {
-    if (RTC_GetITStatus(RTC_IT_SEC) != RESET)
+    if (RTC_GetITStatus(RTC_GetITStatus()) != RESET)
     {
         /* Clear the RTC Second interrupt */
-        RTC_ClearITPendingBit(RTC_IT_SEC);
+        RTC_ClearITPendingBit(RTC_GetITStatus());
 
         /* Toggle LED1 */
-        STM_EVAL_LEDToggle(LED1);
+        STM_EVAL_LEDToggle(0);
 
         /* Enable time update */
         TimeDisplay = 1;
@@ -57,7 +64,7 @@ void RTC_Configuration(void)
     /* Wait until last write operation on RTC registers has finished */
     RTC_WaitForLastTask();
     /* Enable the RTC Second */
-    RTC_ITConfig(R, ENABLE);
+    RTC_ITConfig(RTC_GetITStatus(), ENABLE);
     /* Wait until last write operation on RTC registers has finished */
     RTC_WaitForLastTask();
     /* Set RTC prescaler: set RTC period to 1sec */
@@ -123,9 +130,9 @@ uint8_t USART_Scanf(uint32_t value)
     while (index < 2)
     {
     /* Loop until RXNE = 1 */
-    while (USART_GetFlagStatus(EVAL_COM1, USART_FLAG_RXNE) == RESET)
+    while (USART_GetFlagStatus(&usart, USART_FLAG_RXNE) == RESET)
     {}
-    tmp[index++] = (USART_ReceiveData(EVAL_COM1));
+    tmp[index++] = (USART_ReceiveData(&usart));
     if ((tmp[index - 1] < 0x30) || (tmp[index - 1] > 0x39))
     {
         printf("\n\rPlease enter valid number between 0 and 9");
@@ -180,4 +187,18 @@ void Time_Display(uint32_t TimeVar)
     TSS = (TimeVar % 3600) % 60;
 
     printf("Time: %0.2d:%0.2d:%0.2d\r", THH, TMM, TSS);
+}
+
+void init_RTC(void)
+{
+    usart.USART_BaudRate = 115200;
+    usart.USART_WordLength = USART_WordLength_8b;
+    usart.USART_StopBits = USART_StopBits_1;
+    usart.USART_Parity = USART_Parity_No;
+    usart.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+    usart.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+
+    NVIC_Configuration();
+    RTC_Configuration();
+    Time_Adjust();
 }
