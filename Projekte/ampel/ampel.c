@@ -8,11 +8,11 @@ void InitGpio(void)
 	
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
 	gpio.GPIO_Pin = GPIO_Pin_8;
-  GPIO_Init(GPIOA, &gpio);
+    GPIO_Init(GPIOA, &gpio);
 	
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);
 	gpio.GPIO_Pin = GPIO_Pin_2;
-  GPIO_Init(GPIOD, &gpio);
+  	GPIO_Init(GPIOD, &gpio);
 }
 
 void TIM3_Config(void)

@@ -4,10 +4,10 @@
 ".\stm32f10x_exti.o"
 ".\stm32f10x_gpio.o"
 ".\stm32f10x_rcc.o"
+".\stm32f10x_tim.o"
 ".\stm32f10x_usart.o"
 ".\startup_stm32f10x_md.o"
 ".\system_stm32f10x.o"
-".\stm32f10x_tim.o"
 --ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Projekt_3.map" -o .\Projekt_3.axf

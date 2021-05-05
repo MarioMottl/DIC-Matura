@@ -249,8 +249,8 @@ void usart_process_data(const void* data, size_t len)
 }
 
 /**
- * \brief           Send string to USART
- * \param[in]       str: String to send
+ * @brief           Send string to USART
+ * @param[in]       str: String to send
  */
 void usart_send_string(const char* str) 
 {
